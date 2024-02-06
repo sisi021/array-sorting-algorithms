@@ -13,7 +13,7 @@ static void merge(int arr[], int left, int mid, int right)
     for (i = 0; i < n1; i++) 
         aux_left[i] = arr[left + i]; 
     for (j = 0; j < n2; j++) 
-        aux_right[j] = arr[mid + 1 + j]; 
+        aux_right[j] = arr[mid + 1 + j];  
     i = 0;
     j = 0;
     k = l;
@@ -28,20 +28,19 @@ static void merge(int arr[], int left, int mid, int right)
         } 
         k++; 
     } 
- 
-    while (i < n1) { 
+     while (i < n1) { 
         arr[k] = aux_left[i]; 
         i++; 
         k++; 
     } 
+ 
     while (j < n2) { 
         arr[k] = R[j]; 
         j++; 
         k++; 
     } 
 }
- 
-static void sort(int arr[], int left, int right)
+ static void sort(int arr[], int left, int right)
 {
     if (left < right) {
         int mid = left + (right - left) / 2; 
@@ -52,7 +51,7 @@ static void sort(int arr[], int left, int right)
         merge(arr, left, mid, right); 
     } 
 }
-
+ 
 static void print_array(int *arr, int len)
 {
     int i;
@@ -62,13 +61,13 @@ static void print_array(int *arr, int len)
     }
     printf("\n");
 }
+ 
 int main()
 {
     int arr[MAX_LEN], len, i;
  
     printf("What's the length of the array? Maximum lenght is %d\n", MAX_LEN);
     scanf("%d", &len);
- 
     printf("Gimme the %d elements\n", len);
     for (i = 0; i < len; i++) {
     scanf("%d", &arr[i]);
